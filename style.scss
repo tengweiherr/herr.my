@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 //responsive
-
 $small-desktop: 960px;
 $large-desktop: 1200px;
 $ipad: 768px;
@@ -68,10 +67,6 @@ $enable-negative-margins: true;
 //general-------------------
 *:hover {
   text-decoration: none !important;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -384,7 +379,7 @@ body {
     }
 
     .horizontal-container {
-      width: 300%;
+      width: 240%;
       height: 100%;
       display: flex;
       flex-wrap: nowrap;

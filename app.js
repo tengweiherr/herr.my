@@ -63,7 +63,7 @@ $(document).ready(function(){
     //highlight
     //****************/
     var temp = document.querySelector(".horizontal-container").offsetWidth;
-    let highlightEnd = temp+300;
+    let highlightEnd = temp*1.3;
     let highlightTL = gsap.timeline({
       scrollTrigger:{
         trigger: ".highlight", 

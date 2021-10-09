@@ -2,9 +2,6 @@
 *:hover {
   text-decoration: none !important; }
 
-html {
-  scroll-behavior: smooth; }
-
 body {
   background-color: #e8ece6 !important;
   overflow-x: hidden;
@@ -223,7 +220,7 @@ body {
       .highlight .slider-container .item:hover .highlight-img-div {
         transform: scale(1.05) !important; }
     .highlight .slider-container .horizontal-container {
-      width: 300%;
+      width: 240%;
       height: 100%;
       display: flex;
       flex-wrap: nowrap; }
