@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+*:hover {
+  text-decoration: none !important; }
+
+body {
+  background-color: black !important;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+
+.white {
+  color: white; }
+
+.black {
+  color: black; }
+
+.pink {
+  color: #ff487c; }
+
+.cyan {
+  color: darkcyan; }
+
+.font-1 {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+
+.font-2 {
+  font-family: "Jomolhari", serif;
+  font-size: 0.9rem; }
+
+.button {
+  border: solid 1px rgba(255, 255, 255, 0.7);
+  padding: 12px 30px;
+  width: fit-content;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease; }
+  .button:hover {
+    border: solid 1px white;
+    color: white;
+    background: rgba(255, 255, 255, 0.2); }
+
+.button.pink {
+  border-color: #ff487c !important;
+  color: #ff487c !important; }
+  .button.pink:hover {
+    border: solid 1px #ff487c !important;
+    color: white;
+    background: #ff487c !important; }
+
+.text-container {
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden; }
+
+.slider {
+  background: url(asset/desktop-background-compressed.jpg) no-repeat;
+  background-size: cover; }
+  .slider .slider-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+  .slider .logo img {
+    width: 6vw; }
+
+.navbar {
+  background-color: none; }
+  .navbar ul.navbar-nav.navbar-center {
+    list-style-type: none;
+    width: 50%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 0.9rem; }
+    .navbar ul.navbar-nav.navbar-center .nav-item .nav-link {
+      color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      text-align: center;
+      padding: 0 1rem; }
+      .navbar ul.navbar-nav.navbar-center .nav-item .nav-link:hover {
+        color: rgba(255, 255, 255, 0.7); }
+    .navbar ul.navbar-nav.navbar-center .nav-item.active .nav-link {
+      color: white; }
+  .navbar.fixed-top.scrolled {
+    background-color: black;
+    transition: all 0.5s ease; }
+    .navbar.fixed-top.scrolled .nav-item.active a.nav-link {
+      color: #ff487c !important;
+      font-weight: 600; }
+  .navbar .navbar-collapse {
+    justify-content: flex-end; }
+
+.highlight {
+  background-color: black;
+  padding: 80px 0 120px 0; }
+  .highlight .slider-container {
+    display: flex;
+    flex-direction: column; }
+    .highlight .slider-container .horizontal-container {
+      width: 366%;
+      height: fit-content;
+      display: flex;
+      flex-wrap: nowrap;
+      max-width: none; }
+    .highlight .slider-container .seperate-line {
+      width: 100%;
+      height: 1px;
+      background: white; }
+    .highlight .slider-container .item {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      width: 25%;
+      height: fit-content;
+      will-change: transform;
+      overflow: hidden;
+      background: white; }
+      .highlight .slider-container .item img {
+        width: 350px;
+        height: 472px;
+        object-fit: cover; }
+    .highlight .slider-container .item .item-inner p.description {
+      text-align: justify;
+      margin-bottom: 40px;
+      font-size: 0.9rem; }
+
+section.about-me {
+  background-color: white;
+  padding: 120px 0 80px 0; }
+  section.about-me h1.display-1 {
+    opacity: 0.05;
+    font-size: 120px;
+    left: -130px;
+    top: -55px;
+    width: 100vw;
+    font-weight: 600; }
+  section.about-me .parallax {
+    position: relative; }
+    section.about-me .parallax img {
+      position: absolute;
+      object-fit: cover; }
+  section.about-me .parallax img {
+    width: 300px;
+    height: 400px; }
+  section.about-me .parallax .layer-1 img {
+    top: 0px;
+    right: 20px; }
+  section.about-me .parallax .layer-2 img {
+    top: 80px;
+    left: 0px; }
+  section.about-me .parallax .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+
+.skills {
+  background: white;
+  padding: 200px 0 80px; }
+  .skills h1.display-1 {
+    opacity: 0.05;
+    font-size: 120px;
+    right: -166px;
+    top: -108px;
+    font-weight: 600; }
+
+.experience {
+  background: white;
+  padding: 140px 0; }
+  .experience h1.display-1 {
+    opacity: 0.05;
+    font-size: 120px;
+    left: -130px;
+    top: -124px;
+    width: 100vw;
+    font-weight: 600; }
+  .experience .vertical-line {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 1px;
+    height: 450px;
+    margin: 0 auto;
+    margin-right: 33px; }
+  .experience .exp {
+    margin-top: 20px; }
+    .experience .exp .col-sm-3 {
+      margin-right: -30px; }
+    .experience .exp p {
+      font-size: 0.9rem; }
+    .experience .exp h5,
+    .experience .exp p {
+      color: rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease; }
+    .experience .exp:before {
+      content: "";
+      width: 35px;
+      height: 1px;
+      margin-left: -45px;
+      margin-top: 12px;
+      background: rgba(0, 0, 0, 0.3); }
+    .experience .exp.active h5,
+    .experience .exp.active p {
+      color: black; }
+    .experience .exp.active:before {
+      background: black; }
+  .experience .exp-desc {
+    position: relative; }
+    .experience .exp-desc .exp-desc-inner {
+      width: 100%;
+      height: 450px;
+      background: rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      position: absolute;
+      opacity: 0; }
+      .experience .exp-desc .exp-desc-inner p {
+        width: 100%; }
+      .experience .exp-desc .exp-desc-inner .img-container {
+        width: 100%;
+        height: 200px;
+        overflow: hidden; }
+      .experience .exp-desc .exp-desc-inner img {
+        width: 100%;
+        height: 220px;
+        position: relative; }
+      .experience .exp-desc .exp-desc-inner.active {
+        animation: fadeIn 0.6s ease;
+        opacity: 1;
+        left: 0; }
+        .experience .exp-desc .exp-desc-inner.active img {
+          animation: zoomIn 0.6s ease-out; }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    left: 20px; }
+  100% {
+    opacity: 1;
+    left: 0; } }
+@keyframes zoomIn {
+  0% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+section.more {
+  background-color: white;
+  padding: 100px 0 150px; }
+  section.more .col-sm-4 .more-single {
+    height: 300px;
+    overflow: hidden !important;
+    background-color: rgba(0, 0, 0, 0.9); }
+    section.more .col-sm-4 .more-single img {
+      filter: brightness(0.4);
+      transition: all 0.3s ease; }
+    section.more .col-sm-4 .more-single .description {
+      z-index: 10;
+      height: inherit; }
+      section.more .col-sm-4 .more-single .description h1 {
+        top: 0;
+        right: 15px;
+        font-weight: 700;
+        opacity: 0.1;
+        font-size: 7rem; }
+      section.more .col-sm-4 .more-single .description h4 {
+        transition: all 0.5s ease; }
+      section.more .col-sm-4 .more-single .description p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7); }
+      section.more .col-sm-4 .more-single .description span {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.4);
+        margin-right: 10px; }
+    section.more .col-sm-4 .more-single.active img {
+      filter: brightness(0.7); }
+
+section.contact {
+  background: url("asset/contact-bg-compressed.jpg") no-repeat;
+  background-size: cover;
+  padding: 160px 0 220px 0; }
+  section.contact p.credit {
+    color: rgba(255, 255, 255, 0.6);
+    bottom: 10px;
+    font-size: 0.8rem; }
+  section.contact .container p {
+    color: rgba(255, 255, 255, 0.8); }
+  section.contact .social-media-icon a {
+    width: fit-content;
+    transition: all 0.3s ease; }
+    section.contact .social-media-icon a:hover {
+      transform: translateY(-5px); }
+  section.contact .social-media-icon img {
+    width: 20px;
+    height: 20px; }
+
+/*# sourceMappingURL=:style.css.map */

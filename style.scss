@@ -1,0 +1,878 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+//responsive
+
+$small-desktop: 960px;
+$large-desktop: 1200px;
+$ipad: 768px;
+$ipadpro: 1100px;
+$mobile: 480px;
+$mobile-landscape: 640px;
+
+@mixin respond-to($media) {
+  @if $media == largeDesktop {
+    @media only screen and (min-width: $large-desktop) {
+      @content;
+    }
+  }
+  @if $media == smallDesktop {
+    @media only screen and (max-width: $small-desktop) {
+      @content;
+    }
+  }
+  @if $media == ipads {
+    @media only screen and (max-width: $ipad) {
+      @content;
+    }
+  }
+  @if $media == ipadpro {
+    @media only screen and (min-device-width: $ipad) and (max-device-width: $ipadpro) {
+      @content;
+    }
+  }
+  @if $media == mobile {
+    @media only screen and (max-width: $mobile) {
+      @content;
+    }
+  }
+  @if $media == mobile-portrait {
+    @media only screen and (max-width: $mobile) and (orientation: portrait) {
+      @content;
+    }
+  }
+  @if $media == mobile-landscape {
+    @media only screen and (min-width: 320px) and (max-width: $mobile-landscape) and (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @if $media == retina {
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      @content;
+    }
+  }
+
+  @if $media == iphone5 {
+    @media only screen and (device-aspect-ratio: 40/71) {
+      @content;
+    }
+  }
+}
+
+//Primary and theme colour
+$color-primary: #0c6b66;
+$color-body: #e8ece6;
+
+$enable-negative-margins: true;
+
+//general-------------------
+*:hover {
+  text-decoration: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-body !important;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.white {
+  color: $color-body;
+}
+
+.black {
+  color: black;
+}
+
+.cyan {
+  color: $color-primary;
+}
+
+.lightcyan {
+  color: darkcyan;
+}
+
+.font-1 {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-2 {
+  font-family: Nimbus Roman No9 L, serif;
+}
+
+.font-nav {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+  border: solid 2px black;
+  padding: 8px 20px !important;
+  width: fit-content;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border: solid 2px white;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.button.cyan {
+  border-color: black;
+  color: black;
+
+  &:hover {
+    color: white !important;
+    background: $color-primary;
+  }
+}
+
+.text-container {
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+}
+
+.seperate-line {
+  width: 100%;
+  height: 4px;
+  background: $color-body;
+}
+
+//navbar----------------------------------
+.navbar {
+  background-color: none;
+  transition: all 0.5s ease;
+
+  @include respond-to(ipads) {
+    &.mobile-nav-expand {
+      background: rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease;
+    }
+  }
+
+  .logo {
+    flex-basis: 60%;
+
+    img {
+      width: 50px;
+    }
+  }
+
+  ul {
+    .nav-item {
+      width: 150px;
+      margin: 5px 0;
+
+      a.nav-link {
+        color: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        text-align: center;
+        padding: 0 1rem;
+
+        &.resume {
+          color: black;
+          border: solid 2px black;
+          padding: 8px 20px !important;
+        }
+
+        &:hover {
+          color: black;
+        }
+        &.active {
+          color: $color-primary !important;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &.fixed-top.scrolled {
+    background-color: black;
+    transition: all 0.5s ease;
+
+    .resume:hover {
+      color: white !important;
+      background: $color-primary !important;
+    }
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+}
+
+//slider---------------------------------------------
+.slider {
+  background-size: cover;
+  @include respond-to(mobile) {
+    height: 100%;
+  }
+
+  .slider-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .svg-ani {
+      overflow: visible;
+      transform: scale(0.5);
+      top: -180px;
+      margin: 2.5rem 0 -50px 0;
+
+      @include respond-to(ipadpro) {
+        transform: scale(0.6);
+        top: -140px;
+        margin-bottom: 50px;
+      }
+
+      @include respond-to(ipads) {
+        transform: scale(0.6);
+        top: -110px;
+        margin-bottom: 0;
+      }
+
+      @include respond-to(mobile) {
+        transform: scale(0.95);
+        top: 30px;
+        margin: 0px;
+      }
+    }
+  }
+
+  .logo {
+    img {
+      width: 6vw;
+
+      @include respond-to(mobile) {
+        width: 18vw !important;
+        margin-bottom: -50px;
+      }
+    }
+  }
+}
+
+.quote-1 {
+  padding-bottom: 80px;
+  margin-top: -100px;
+
+  @include respond-to(ipads) {
+    margin-top: 0px;
+    padding-bottom: 50px;
+  }
+
+  @include respond-to(mobile) {
+    margin-top: 180px;
+    padding-bottom: 50px;
+  }
+
+  h1 {
+    font-weight: 600;
+  }
+}
+
+//highlight----------------------------------
+.highlight {
+  padding: 40px 0 60px 0;
+  background: $color-primary;
+
+  .slider-container {
+    display: flex;
+    flex-direction: column;
+
+    .text-container h1.text-break {
+      white-space: nowrap;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      width: 800px;
+      height: fit-content;
+      will-change: transform;
+      overflow: hidden;
+      background: $color-body;
+      border-radius: 15px;
+      padding: 50px;
+      margin-right: 25px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.5s ease;
+
+      @include respond-to(ipads) {
+        flex-direction: column;
+        width: 300px;
+        padding: 20px;
+      }
+
+      .highlight-img-div {
+        width: 250px;
+        min-width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: 10px solid #0c6b66;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background-position: center !important;
+        background-size: cover !important;
+        transition: all 0.5s ease;
+
+        @include respond-to(ipads) {
+          height: 200px;
+          width: 200px;
+          min-width: 200px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .hover-icon-bg {
+          background: rgba(0, 0, 0, 0);
+          transition: all 0.3s ease;
+        }
+
+        .hover-icon {
+          z-index: 999;
+          opacity: 0;
+          margin-bottom: -20px;
+          transition: all 0.3s ease;
+
+          img {
+            width: 2.2rem !important;
+            height: 2.2rem !important;
+            object-fit: contain !important;
+            filter: brightness(0) invert(0.95);
+          }
+        }
+
+        &:hover {
+          .hover-icon-bg {
+            background: rgba(0, 0, 0, 0.5);
+          }
+
+          .hover-icon {
+            opacity: 1;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &:hover {
+        .highlight-img-div {
+          transform: scale(1.05) !important;
+        }
+      }
+    }
+
+    .horizontal-container {
+      width: 300%;
+      height: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .item .item-inner {
+      display: flex;
+      flex-direction: column;
+      height: 250px;
+      justify-content: space-between;
+      margin-left: 2.5rem;
+
+      @include respond-to(ipads) {
+        margin-left: 0;
+        height: 350px;
+        margin-top: 20px;
+      }
+
+      h3 {
+        flex-basis: 30%;
+        @include respond-to(ipads) {
+          flex-basis: 20%;
+        }
+      }
+
+      .role-tools {
+        flex-basis: 30%;
+        @include respond-to(ipads) {
+          flex-basis: 35%;
+        }
+      }
+
+      p.description {
+        flex-basis: 40%;
+        text-align: justify;
+        font-size: 0.9rem;
+        @include respond-to(ipads) {
+          text-align: left;
+          flex-basis: 45%;
+        }
+      }
+    }
+  }
+}
+
+//about-me----------------------------------
+section.introducing {
+  padding-top: 120px;
+
+  h1 {
+    font-size: 60px;
+    font-weight: 600;
+    @include respond-to(ipads) {
+      padding-bottom: 12px;
+    }
+    @include respond-to(mobile) {
+      text-align: center;
+      padding-bottom: 0px;
+    }
+  }
+}
+
+section.about-me {
+  background-color: $color-body;
+  padding: 0 0 80px 0;
+
+  .seperate-line {
+    background: black;
+  }
+
+  .parallax {
+    position: relative;
+
+    img {
+      width: 300px;
+      height: 400px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      position: absolute;
+      object-fit: cover;
+      @include respond-to(ipads) {
+        position: relative;
+        width: 100%;
+      }
+    }
+
+    .layer-1 img {
+      top: 0px;
+      right: 20px;
+      @include respond-to(ipads) {
+        display: none;
+      }
+    }
+
+    .layer-2 img {
+      top: 100px;
+      left: 0px;
+      @include respond-to(ipads) {
+        display: none;
+      }
+    }
+
+    .mobile {
+      @include respond-to(ipads) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+      }
+      @include respond-to(mobile) {
+        display: block;
+      }
+      img {
+        display: none;
+
+        @include respond-to(ipads) {
+          display: block;
+          width: 49%;
+        }
+        @include respond-to(mobile) {
+          display: block;
+          width: 100%;
+        }
+
+        &.ipad {
+          display: none;
+
+          @include respond-to(ipads) {
+            display: block;
+          }
+          @include respond-to(mobile) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  @include respond-to(ipads) {
+    .container .row {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .row.description {
+    @include respond-to(ipads) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+//experience----------------------------------
+
+.experience {
+  background: $color-body;
+  padding: 60px 0;
+
+  h1.display-1 {
+    font-size: 60px;
+    font-weight: 600;
+  }
+
+  .vertical-line {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 1px;
+    height: 100%;
+    margin: 0 auto;
+    margin-right: 33px;
+  }
+
+  .exp {
+    margin-top: 20px;
+
+    .col-sm-3 {
+      margin-right: -40px;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    h5,
+    p {
+      color: rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    &:before {
+      content: "";
+      width: 35px;
+      height: 1px;
+      margin-left: -45px;
+      margin-top: 12px;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover {
+      h5,
+      p {
+        color: rgba(0, 0, 0, 0.4);
+      }
+
+      &:before {
+        background: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    &.active {
+      h5,
+      p {
+        color: black;
+      }
+
+      &:before {
+        background: rgba(0, 0, 0, 1);
+      }
+    }
+  }
+
+  .exp-desc {
+    position: relative;
+
+    .exp-desc-inner {
+      width: 100%;
+      background: $color-primary;
+      overflow: hidden;
+      position: absolute;
+      opacity: 0;
+      border-radius: 12px;
+      padding: 2.5rem;
+
+      p {
+        width: 100%;
+        opacity: 0.85;
+      }
+
+      h5 {
+        color: white;
+      }
+
+      .img-container {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      img {
+        width: 100%;
+        height: 220px;
+        position: relative;
+      }
+
+      &.active {
+        animation: fadeIn 0.6s ease;
+        opacity: 1;
+        left: 0;
+
+        img {
+          animation: zoomIn 0.6s ease-out;
+        }
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          left: 20px;
+        }
+        100% {
+          opacity: 1;
+          left: 0;
+        }
+      }
+
+      @keyframes zoomIn {
+        0% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+
+    &.desktop {
+      @include respond-to(ipads) {
+        display: none;
+      }
+    }
+
+    &.mobile {
+      display: none;
+
+      @include respond-to(ipads) {
+        display: block;
+        width: 120%;
+
+        @include respond-to(mobile) {
+          width: 105%;
+        }
+
+        .exp-desc-inner {
+          display: none;
+          position: relative;
+          padding: 25px 15px;
+
+          &.active {
+            display: block;
+          }
+
+          h5,
+          p {
+            color: $color-body !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// more ------------------
+
+section.more {
+  background-color: $color-body;
+  padding: 80px 0 40px;
+
+  @include respond-to(ipads) {
+    padding: 80px 0 0 0;
+  }
+
+  .row {
+    margin-bottom: 0.5rem;
+    @include respond-to(mobile) {
+      margin-bottom: 0;
+    }
+  }
+
+  .col-md-4 .more-single {
+    height: 300px;
+    overflow: hidden !important;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+
+    .more-bg {
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 20;
+      transition: all 0.5s ease;
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .description {
+      z-index: 30;
+      height: inherit;
+
+      h1 {
+        top: 0;
+        right: 15px;
+        font-weight: 700;
+        opacity: 0.1;
+        font-size: 7rem;
+        transition: all 0.5s ease;
+      }
+
+      h4 {
+        transition: all 0.5s ease;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      span {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.4);
+        margin-right: 10px;
+      }
+    }
+
+    &.active {
+      .more-bg {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      img {
+        transform: scale(1.05);
+      }
+      h4 {
+        color: white;
+      }
+      h1 {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+//contact
+//****************
+
+section.contact {
+  padding: 40px 0 100px 0;
+
+  @include respond-to(ipads) {
+    padding: 0 0 100px 0;
+  }
+
+  .cat-ani {
+    transform: scale(0.8);
+    @include respond-to(ipads) {
+      margin-top: -30px;
+      transform: scale(0.5);
+    }
+    @include respond-to(mobile) {
+      margin-top: 0px;
+      transform: scale(0.7);
+    }
+  }
+
+  h1.display-1 {
+    font-size: 60px;
+    font-weight: 600;
+    text-align: right;
+
+    @include respond-to(ipads) {
+      font-size: 52px;
+      text-align: center;
+    }
+  }
+
+  p.description {
+    text-align: right;
+
+    @include respond-to(ipads) {
+      text-align: center;
+    }
+  }
+
+  a.button {
+    align-self: flex-end;
+
+    @include respond-to(ipads) {
+      margin: 0 auto;
+    }
+  }
+
+  p.credit {
+    bottom: 10px;
+    font-size: 0.8rem;
+  }
+
+  .social-media-icon {
+    align-self: flex-end;
+
+    @include respond-to(ipads) {
+      align-self: center;
+      padding: 10px 1rem;
+      margin: 0 auto;
+    }
+    @include respond-to(mobile) {
+      align-self: center;
+      padding: 5px 0;
+      margin: 0 auto;
+    }
+
+    a {
+      width: fit-content;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
