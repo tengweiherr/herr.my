@@ -50,15 +50,15 @@ $(document).ready(function(){
 
     sliderTL
     .from(".slider h1.name", {
-      y: 100 
+      y: 200 
     })
     .from(".slider .intro p", {
-      y: 50  
+      y: 100  
     }, "-=0.2");
 
     gsap.from(".quote-1 h1", {
       scrollTrigger: {trigger: ".quote-1", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
-      y: 120
+      y: 200
     });
 
     //highlight
@@ -68,7 +68,7 @@ $(document).ready(function(){
     let highlightTL = gsap.timeline({
       scrollTrigger:{
         trigger: ".highlight", 
-        start:"top 80%",
+        start:"top 80%"
       }
     });
     
@@ -76,84 +76,32 @@ $(document).ready(function(){
     .from(".highlight .text-container h1",{
       y:50   
     })
-    .from(".highlight .seperate-line", 5,{
+    .from(".highlight .seperate-line span hr",{
       width:0,
-      ease:Power4.easeOut   
-    });
+      ease:Power2.easeOut   
+    },"-=0.5");
 
-    highlightTL.duration(3);
-
-
+    highlightTL.duration(1);
 
 
-    
-
-//     let allSections = gsap.utils.toArray('.horizontal-container .item');
-//     let container = jQuery('.horizontal-container');
-
-// var scrollWidth = 1.55;
+    //toggleClass for horozontal container in responsive
 // var windowWidth = $(window).width();
 
-// function resizeContainer (windowWidth) { 
+// function horizontalContainerToggleClass (windowWidth) { 
 
-//   if( windowWidth < 1400 ) {
-//     scrollWidth = 1.33;
-//   }
-//   if( windowWidth < 1080 ) {
-//     scrollWidth = 1.1;
-//   }
-//   if( windowWidth < 800 ) {
-//     scrollWidth = 2.15;
-//   }
-//   if( windowWidth < 620 ) {
-//     scrollWidth = 1.55;
-//   }
-//   if( windowWidth < 580 ){
-//     scrollWidth = 1.43;
-//   }
-//   if( windowWidth < 500 ){
-//     scrollWidth = 1.35;
-//   }
-//   if( windowWidth < 420 ){
-//     scrollWidth = 1.08;
-//   }
-//   if( windowWidth < 380 ){
-//     scrollWidth = 1;
-//   }
-//   if( windowWidth < 361 ){
-//     scrollWidth = 0.95;
-//   }
-//   if( windowWidth < 321 ){
-//     scrollWidth = 0.9;
+//   if( windowWidth < 480 ) {
+//     $('.horizontal-container').addClass('container');
+//   }else{
+//     $('.horizontal-container').removeClass('container');
 //   }
 
 // }
 
-// resizeContainer(windowWidth);
+// horizontalContainerToggleClass(windowWidth);
 
 // $( window ).resize(function() {
-//   resizeContainer(windowWidth);
+//   horizontalContainerToggleClass(windowWidth);
 // });
-
-
-//     gsap.to(allSections, {
-//     xPercent: -100 * (allSections.length - scrollWidth),
-//     ease: "none",
-//     scrollTrigger: {
-//       trigger: ".horizontal-container",
-//       pin: ".pin",
-//       start: "45% center",
-//       scrub: 1,
-//       snap: 1 / (allSections.length - 1),
-//       invalidateOnRefresh: true,
-//       anticipatePin: 1,
-//       // base vertical scrolling on how wide the container is so it feels more natural.
-//       end: () => "+=" + document.querySelector(".horizontal-container").offsetWidth
-//       //innerWidth * 2.5 
-//       //"+=" + document.querySelector(".horizontal-container").offsetWidth
-//       //`+=${container.offsetWidth}`
-//     }
-//   });
 
 
 
@@ -484,8 +432,7 @@ gsap.from(".contact .social-media-icon a", 0.1,{
   //   slider.addEventListener('mouseup', end);
   //   slider.addEventListener('touchend', end);
   // })();
-  var temp = document.querySelector(".horizontal-container");
-  var lineWidth = $(".highlight .seperate-line").width();
+  var horizontal_container = document.querySelector(".horizontal-container");
 
 
   (function() { 
@@ -503,16 +450,43 @@ gsap.from(".contact .social-media-icon a", 0.1,{
       },
       onDrag:function() {
         
-        // function getMatrix(element) {
-        //   const values = element.style.transform.split(/\w+\(|\);?/);
-        //   const transform = values[1].split(/,\s?/g).map(parseInt);
-        //   return Math.abs(transform[0]);
-        // }
-        // var fullwidth = getMatrix(temp); //1167
-        // var fullwidthPer = 0.085;
-        // $(".highlight .seperate-line").width(fullwidth*fullwidthPer + '%');
+        function getMatrix(element) {
+          const values = element.style.transform.split(/\w+\(|\);?/);
+          const transform = values[1].split(/,\s?/g).map(parseInt);
+          return Math.abs(transform[0]);
+        }
+        var fullwidth = getMatrix(horizontal_container); //1167 in desktop
+        var fullwidthPer = 0.06;
 
-        // console.log(fullwidth*fullwidthPer);
+        //changeFactor for seperate line width in responsive
+        var windowWidth = $(window).width();
+
+        function changeFactor (windowWidth) { 
+
+          if( windowWidth > 400 && windowWidth < 599) {
+            fullwidthPer = 0.08;
+          }
+          if( windowWidth > 600 && windowWidth < 800) {
+            fullwidthPer = 0.24;
+          }
+          if( windowWidth > 801 && windowWidth < 1200) {
+            fullwidthPer = 0.043;
+          }
+          if( windowWidth > 1201 && windowWidth < 1400) {
+            fullwidthPer = 0.049;
+          }
+        }
+
+        changeFactor(windowWidth);
+
+        $( window ).resize(function() {
+          changeFactor(windowWidth);
+        });
+
+        
+        $(".highlight .seperate-line span hr").width((33+(fullwidth*fullwidthPer)) + '%');
+
+        console.log((33+(fullwidth*fullwidthPer)));
        
       },
       // cursor: `url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png"), ew-resize`,

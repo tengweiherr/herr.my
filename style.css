@@ -58,9 +58,14 @@ body {
   overflow: hidden; }
 
 .seperate-line {
-  width: 70%;
-  height: 4px;
-  background: #e8ece6; }
+  width: 100%; }
+  .seperate-line span {
+    display: inline; }
+    .seperate-line span hr {
+      width: 33%;
+      height: 4px !important;
+      color: #e8ece6;
+      opacity: 1; }
 
 .navbar {
   background-color: none;
@@ -108,27 +113,27 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    overflow: hidden;
+    overflow: visible;
     flex: 1; }
     .slider .slider-container p {
       font-size: 0.9rem; }
     .slider .slider-container .ani-container {
-      max-height: 60vh; }
+      overflow: visible; }
     .slider .slider-container .svg-ani {
       overflow: visible;
       transform: scale(0.5);
       top: -250px;
-      margin: 2.5rem 0 0 0; }
+      margin: 2.5rem 0 -32.5rem 0; }
       @media only screen and (min-device-width: 768px) and (max-device-width: 1100px) {
         .slider .slider-container .svg-ani {
           transform: scale(0.6);
-          top: -140px;
-          margin-bottom: 50px; } }
+          top: -160px;
+          margin-bottom: -20rem; } }
       @media only screen and (max-width: 768px) {
         .slider .slider-container .svg-ani {
           transform: scale(0.6);
           top: -110px;
-          margin-bottom: 0; } }
+          margin-bottom: -11rem; } }
       @media only screen and (max-width: 480px) {
         .slider .slider-container .svg-ani {
           transform: scale(0.95);
@@ -181,6 +186,8 @@ body {
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
       position: relative;
       transition: all 0.5s ease; }
+      .highlight .slider-container .item#item-3 {
+        margin-right: 0px !important; }
       @media only screen and (max-width: 768px) {
         .highlight .slider-container .item {
           flex-direction: column;
@@ -229,15 +236,19 @@ body {
           opacity: 1;
           margin-bottom: 0; }
       .highlight .slider-container .item:hover {
-        transform: scale(0.98) !important;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); }
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4); }
+        .highlight .slider-container .item:hover .highlight-img-div {
+          transform: scale(1.05) !important; }
     .highlight .slider-container .horizontal-container {
       display: flex;
       position: relative; }
+      @media only screen and (max-width: 480px) {
+        .highlight .slider-container .horizontal-container {
+          padding: 0 0.75rem; } }
       .highlight .slider-container .horizontal-container.active {
         cursor: grab; }
         .highlight .slider-container .horizontal-container.active .item {
-          transform: scale(0.9) !important; }
+          transform: scale(0.95) !important; }
     .highlight .slider-container .item .item-inner {
       display: flex;
       flex-direction: column;
@@ -247,7 +258,7 @@ body {
       @media only screen and (max-width: 768px) {
         .highlight .slider-container .item .item-inner {
           margin-left: 0;
-          height: 280px;
+          height: 290px;
           margin-top: 20px; } }
       .highlight .slider-container .item .item-inner h3 {
         flex-basis: 30%; }

@@ -141,9 +141,16 @@ body {
 }
 
 .seperate-line {
-  width: 70%;
-  height: 4px;
-  background: $color-body;
+  width: 100%;
+  span {
+    display: inline;
+    hr {
+      width: 33%;
+      height: 4px !important;
+      color: $color-body;
+      opacity: 1;
+    }
+  }
 }
 
 //navbar----------------------------------
@@ -220,7 +227,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    overflow: hidden; //
+    overflow: visible; //
     flex: 1; //
 
     p {
@@ -228,25 +235,26 @@ body {
     }
 
     .ani-container {
-      max-height: 60vh;
+      // max-height: 100vh;
+      overflow: visible;
     }
 
     .svg-ani {
       overflow: visible;
       transform: scale(0.5);
       top: -250px;
-      margin: 2.5rem 0 0 0;
+      margin: 2.5rem 0 -32.5rem 0;
 
       @include respond-to(ipadpro) {
         transform: scale(0.6);
-        top: -140px;
-        margin-bottom: 50px;
+        top: -160px;
+        margin-bottom: -20rem;
       }
 
       @include respond-to(ipads) {
         transform: scale(0.6);
         top: -110px;
-        margin-bottom: 0;
+        margin-bottom: -11rem;
       }
 
       @include respond-to(mobile) {
@@ -321,9 +329,9 @@ body {
       position: relative; //
       transition: all 0.5s ease;
 
-      // &#item-3 {
-      //   margin-right: 60px !important;
-      // }
+      &#item-3 {
+        margin-right: 0px !important;
+      }
 
       @include respond-to(ipads) {
         flex-direction: column;
@@ -391,12 +399,12 @@ body {
       }
 
       &:hover {
-        transform: scale(0.98) !important;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+        // transform: scale(0.98) !important;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
 
-        // .highlight-img-div {
-        //   transform: scale(1.05) !important;
-        // }
+        .highlight-img-div {
+          transform: scale(1.05) !important;
+        }
       }
     }
 
@@ -408,10 +416,14 @@ body {
       position: relative;
       // cursor: pointer;
 
+      @include respond-to(mobile) {
+        padding: 0 0.75rem;
+      }
+
       &.active {
         cursor: grab;
         .item {
-          transform: scale(0.9) !important;
+          transform: scale(0.95) !important;
         }
       }
     }
@@ -425,7 +437,7 @@ body {
 
       @include respond-to(ipads) {
         margin-left: 0;
-        height: 280px;
+        height: 290px;
         margin-top: 20px;
       }
 
