@@ -71,7 +71,6 @@ $enable-negative-margins: true;
 
 body {
   background-color: $color-body !important;
-  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -137,7 +136,7 @@ body {
 }
 
 .seperate-line {
-  width: 100%;
+  width: 70%;
   height: 4px;
   background: $color-body;
 }
@@ -216,6 +215,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    overflow: hidden; //
+    flex: 1; //
 
     p {
       font-size: 0.9rem;
@@ -286,6 +287,10 @@ body {
   .slider-container {
     display: flex;
     flex-direction: column;
+    position: relative; //
+    overflow: hidden;
+    align-items: flex-start;
+    // margin: 0 auto;
 
     .text-container h1.text-break {
       white-space: nowrap;
@@ -296,20 +301,26 @@ body {
       flex-direction: row;
       justify-content: start;
       align-items: center;
-      width: 800px;
+      width: 80%;
+      min-width: 800px;
       height: fit-content;
-      will-change: transform;
-      overflow: hidden;
       background: $color-body;
       border-radius: 15px;
       padding: 50px;
       margin-right: 25px;
+      user-select: none;
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      position: relative; //
       transition: all 0.5s ease;
+
+      // &#item-3 {
+      //   margin-right: 60px !important;
+      // }
 
       @include respond-to(ipads) {
         flex-direction: column;
         width: 300px;
+        min-width: 300px;
         padding: 20px;
       }
 
@@ -372,17 +383,29 @@ body {
       }
 
       &:hover {
-        .highlight-img-div {
-          transform: scale(1.05) !important;
-        }
+        transform: scale(0.98) !important;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+
+        // .highlight-img-div {
+        //   transform: scale(1.05) !important;
+        // }
       }
     }
 
     .horizontal-container {
-      width: 240%;
-      height: 100%;
+      // width: 100%;
+      // height: fit-content;
       display: flex;
-      flex-wrap: nowrap;
+      // overflow: hidden;
+      position: relative;
+      // cursor: pointer;
+
+      &.active {
+        cursor: grab;
+        .item {
+          transform: scale(0.9) !important;
+        }
+      }
     }
 
     .item .item-inner {
@@ -446,9 +469,10 @@ section.about-me {
   background-color: $color-body;
   padding: 0 0 80px 0;
 
-  .seperate-line {
-    background: black;
-  }
+  // .seperate-line {
+  //   background: black;
+  //   max-width: 100%;
+  // }
 
   .parallax {
     position: relative;

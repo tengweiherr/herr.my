@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Draggable);
 
 $(document).ready(function(){
 
@@ -62,15 +63,12 @@ $(document).ready(function(){
 
     //highlight
     //****************/
-    var temp = document.querySelector(".horizontal-container").offsetWidth;
-    let highlightEnd = temp*1.3;
+    // var temp = document.querySelector(".horizontal-container").offsetWidth;
+    // let highlightEnd = temp*1.3;
     let highlightTL = gsap.timeline({
       scrollTrigger:{
         trigger: ".highlight", 
-        start:"top 90%",
-        end: "+=" + highlightEnd, 
-        scrub:1, 
-        toggleActions: "play complete complete complete"     
+        start:"top 80%",
       }
     });
     
@@ -79,75 +77,93 @@ $(document).ready(function(){
       y:50   
     })
     .from(".highlight .seperate-line", 5,{
-      width:0   
+      width:0,
+      ease:Power4.easeOut   
     });
 
-    let allSections = gsap.utils.toArray('.horizontal-container .item');
-    let container = jQuery('.horizontal-container');
-
-var scrollWidth = 1.55;
-var windowWidth = $(window).width();
-
-function resizeContainer (windowWidth) { 
-
-  if( windowWidth < 1400 ) {
-    scrollWidth = 1.33;
-  }
-  if( windowWidth < 1080 ) {
-    scrollWidth = 1.1;
-  }
-  if( windowWidth < 800 ) {
-    scrollWidth = 2.15;
-  }
-  if( windowWidth < 620 ) {
-    scrollWidth = 1.55;
-  }
-  if( windowWidth < 580 ){
-    scrollWidth = 1.43;
-  }
-  if( windowWidth < 500 ){
-    scrollWidth = 1.35;
-  }
-  if( windowWidth < 420 ){
-    scrollWidth = 1.08;
-  }
-  if( windowWidth < 380 ){
-    scrollWidth = 1;
-  }
-  if( windowWidth < 361 ){
-    scrollWidth = 0.95;
-  }
-  if( windowWidth < 321 ){
-    scrollWidth = 0.9;
-  }
-
-}
-
-resizeContainer(windowWidth);
-
-$( window ).resize(function() {
-  resizeContainer(windowWidth);
-});
+    highlightTL.duration(3);
 
 
-    gsap.to(allSections, {
-    xPercent: -100 * (allSections.length - scrollWidth),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".horizontal-container",
-      pin: ".pin",
-      start: "45% center",
-      scrub: 1,
-      snap: 1 / (allSections.length - 1),
-      invalidateOnRefresh: true,
-      anticipatePin: 1,
-      // base vertical scrolling on how wide the container is so it feels more natural.
-      end: () => "+=" + document.querySelector(".horizontal-container").offsetWidth
-      //innerWidth * 2.5 
-      //"+=" + document.querySelector(".horizontal-container").offsetWidth
-      //`+=${container.offsetWidth}`
-    }
-  });
+
+
+    
+
+//     let allSections = gsap.utils.toArray('.horizontal-container .item');
+//     let container = jQuery('.horizontal-container');
+
+// var scrollWidth = 1.55;
+// var windowWidth = $(window).width();
+
+// function resizeContainer (windowWidth) { 
+
+//   if( windowWidth < 1400 ) {
+//     scrollWidth = 1.33;
+//   }
+//   if( windowWidth < 1080 ) {
+//     scrollWidth = 1.1;
+//   }
+//   if( windowWidth < 800 ) {
+//     scrollWidth = 2.15;
+//   }
+//   if( windowWidth < 620 ) {
+//     scrollWidth = 1.55;
+//   }
+//   if( windowWidth < 580 ){
+//     scrollWidth = 1.43;
+//   }
+//   if( windowWidth < 500 ){
+//     scrollWidth = 1.35;
+//   }
+//   if( windowWidth < 420 ){
+//     scrollWidth = 1.08;
+//   }
+//   if( windowWidth < 380 ){
+//     scrollWidth = 1;
+//   }
+//   if( windowWidth < 361 ){
+//     scrollWidth = 0.95;
+//   }
+//   if( windowWidth < 321 ){
+//     scrollWidth = 0.9;
+//   }
+
+// }
+
+// resizeContainer(windowWidth);
+
+// $( window ).resize(function() {
+//   resizeContainer(windowWidth);
+// });
+
+
+//     gsap.to(allSections, {
+//     xPercent: -100 * (allSections.length - scrollWidth),
+//     ease: "none",
+//     scrollTrigger: {
+//       trigger: ".horizontal-container",
+//       pin: ".pin",
+//       start: "45% center",
+//       scrub: 1,
+//       snap: 1 / (allSections.length - 1),
+//       invalidateOnRefresh: true,
+//       anticipatePin: 1,
+//       // base vertical scrolling on how wide the container is so it feels more natural.
+//       end: () => "+=" + document.querySelector(".horizontal-container").offsetWidth
+//       //innerWidth * 2.5 
+//       //"+=" + document.querySelector(".horizontal-container").offsetWidth
+//       //`+=${container.offsetWidth}`
+//     }
+//   });
+
+
+
+
+
+
+
+
+
+
 
   gsap.from(".layer-1 img", {
     scrollTrigger: {trigger: ".about-me", start:"top center", end:"bottom top", scrub:1, toggleActions: "play complete complete complete"},
@@ -430,10 +446,96 @@ gsap.from(".contact .social-media-icon a", 0.1,{
 
 
 
+  // let isDown = false;
+  // let startX;
+  // let scrollLeft;
+  // const slider = document.querySelector('.horizontal-container');
+  
+  // const end = () => {
+  //   isDown = false;
+  //   slider.classList.remove('active');
+  // }
+  
+  // const start = (e) => {
+  //   isDown = true;
+  //   slider.classList.add('active');
+  //   startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+  //   scrollLeft = slider.scrollLeft;	
+  // }
+  
+  // const move = (e) => {
+  //   if(!isDown) return;
+  
+  //   e.preventDefault();
+  //   const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+  //   const dist = (x - startX);
+  //   slider.scrollLeft = scrollLeft - dist;
+
+  // }
+  
+  // (() => {
+  //   slider.addEventListener('mousedown', start);
+  //   slider.addEventListener('touchstart', start);
+  
+  //   slider.addEventListener('mousemove', move);
+  //   slider.addEventListener('touchmove', move);
+  
+  //   slider.addEventListener('mouseleave', end);
+  //   slider.addEventListener('mouseup', end);
+  //   slider.addEventListener('touchend', end);
+  // })();
+  var temp = document.querySelector(".horizontal-container");
+  var lineWidth = $(".highlight .seperate-line").width();
+
+
+  (function() { 
+  
+    Draggable.create(".horizontal-container", {
+      type:"x",
+      bounds:".slider-container",
+      // throwProps:true, 
+      onDragStart:function() {
+        $(".horizontal-container").addClass('active');
+        
+      },
+      onDragEnd:function() {
+        $(".horizontal-container").removeClass('active');
+      },
+      onDrag:function() {
+        
+        // function getMatrix(element) {
+        //   const values = element.style.transform.split(/\w+\(|\);?/);
+        //   const transform = values[1].split(/,\s?/g).map(parseInt);
+        //   return Math.abs(transform[0]);
+        // }
+        // var fullwidth = getMatrix(temp); //1167
+        // var fullwidthPer = 0.085;
+        // $(".highlight .seperate-line").width(fullwidth*fullwidthPer + '%');
+
+        // console.log(fullwidth*fullwidthPer);
+       
+      },
+      // cursor: `url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png"), ew-resize`,
+       snap:{
+          x: function(value) {
+              //snap to the closest increment of 50.
+              return Math.round(value / 305) * 305; 
+          }
+       }
+  });
+    
+  }());
+
+
+  
+  
 
 
 
 });
+
+
+
 
 
 

@@ -4,7 +4,6 @@
 
 body {
   background-color: #e8ece6 !important;
-  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
 
 .white {
@@ -55,7 +54,7 @@ body {
   overflow: hidden; }
 
 .seperate-line {
-  width: 100%;
+  width: 70%;
   height: 4px;
   background: #e8ece6; }
 
@@ -104,7 +103,9 @@ body {
   .slider .slider-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around; }
+    justify-content: space-around;
+    overflow: hidden;
+    flex: 1; }
     .slider .slider-container p {
       font-size: 0.9rem; }
     .slider .slider-container .svg-ani {
@@ -153,7 +154,10 @@ body {
   background: #0c6b66; }
   .highlight .slider-container {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    align-items: flex-start; }
     .highlight .slider-container .text-container h1.text-break {
       white-space: nowrap; }
     .highlight .slider-container .item {
@@ -161,20 +165,22 @@ body {
       flex-direction: row;
       justify-content: start;
       align-items: center;
-      width: 800px;
+      width: 80%;
+      min-width: 800px;
       height: fit-content;
-      will-change: transform;
-      overflow: hidden;
       background: #e8ece6;
       border-radius: 15px;
       padding: 50px;
       margin-right: 25px;
+      user-select: none;
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
       transition: all 0.5s ease; }
       @media only screen and (max-width: 768px) {
         .highlight .slider-container .item {
           flex-direction: column;
           width: 300px;
+          min-width: 300px;
           padding: 20px; } }
       .highlight .slider-container .item .highlight-img-div {
         width: 250px;
@@ -217,13 +223,16 @@ body {
         .highlight .slider-container .item .highlight-img-div:hover .hover-icon {
           opacity: 1;
           margin-bottom: 0; }
-      .highlight .slider-container .item:hover .highlight-img-div {
-        transform: scale(1.05) !important; }
+      .highlight .slider-container .item:hover {
+        transform: scale(0.98) !important;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); }
     .highlight .slider-container .horizontal-container {
-      width: 240%;
-      height: 100%;
       display: flex;
-      flex-wrap: nowrap; }
+      position: relative; }
+      .highlight .slider-container .horizontal-container.active {
+        cursor: grab; }
+        .highlight .slider-container .horizontal-container.active .item {
+          transform: scale(0.9) !important; }
     .highlight .slider-container .item .item-inner {
       display: flex;
       flex-direction: column;
@@ -270,8 +279,6 @@ section.introducing {
 section.about-me {
   background-color: #e8ece6;
   padding: 0 0 80px 0; }
-  section.about-me .seperate-line {
-    background: black; }
   section.about-me .parallax {
     position: relative; }
     section.about-me .parallax img {
