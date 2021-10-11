@@ -248,7 +248,7 @@ body {
       @media only screen and (max-width: 768px) {
         .highlight .slider-container .item .item-inner {
           margin-left: 0;
-          height: 350px;
+          height: 300px;
           margin-top: 20px; } }
       .highlight .slider-container .item .item-inner h3 {
         flex-basis: 30%; }
