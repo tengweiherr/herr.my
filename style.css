@@ -4,7 +4,8 @@
 
 body {
   background-color: #e8ece6 !important;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-y: hidden; }
 
 .white {
   color: #e8ece6; }
