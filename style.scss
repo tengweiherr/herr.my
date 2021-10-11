@@ -69,10 +69,14 @@ $enable-negative-margins: true;
   text-decoration: none !important;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: $color-body !important;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .white {
@@ -223,11 +227,15 @@ body {
       font-size: 0.9rem;
     }
 
+    .ani-container {
+      max-height: 60vh;
+    }
+
     .svg-ani {
       overflow: visible;
       transform: scale(0.5);
-      top: -180px;
-      margin: 2.5rem 0 -50px 0;
+      top: -250px;
+      margin: 2.5rem 0 0 0;
 
       @include respond-to(ipadpro) {
         transform: scale(0.6);
@@ -244,7 +252,7 @@ body {
       @include respond-to(mobile) {
         transform: scale(0.95);
         top: 30px;
-        margin: 0px;
+        margin: 0 0 50px 0;
       }
     }
   }
@@ -263,7 +271,7 @@ body {
 
 .quote-1 {
   padding-bottom: 80px;
-  margin-top: -100px;
+  margin-top: 50px;
 
   @include respond-to(ipads) {
     margin-top: 0px;
@@ -271,7 +279,7 @@ body {
   }
 
   @include respond-to(mobile) {
-    margin-top: 180px;
+    margin-top: 20px;
     padding-bottom: 50px;
   }
 

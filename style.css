@@ -2,10 +2,13 @@
 *:hover {
   text-decoration: none !important; }
 
+html {
+  overflow-x: hidden; }
+
 body {
   background-color: #e8ece6 !important;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  overflow-y: hidden; }
+  overflow-x: hidden; }
 
 .white {
   color: #e8ece6; }
@@ -109,11 +112,13 @@ body {
     flex: 1; }
     .slider .slider-container p {
       font-size: 0.9rem; }
+    .slider .slider-container .ani-container {
+      max-height: 60vh; }
     .slider .slider-container .svg-ani {
       overflow: visible;
       transform: scale(0.5);
-      top: -180px;
-      margin: 2.5rem 0 -50px 0; }
+      top: -250px;
+      margin: 2.5rem 0 0 0; }
       @media only screen and (min-device-width: 768px) and (max-device-width: 1100px) {
         .slider .slider-container .svg-ani {
           transform: scale(0.6);
@@ -128,7 +133,7 @@ body {
         .slider .slider-container .svg-ani {
           transform: scale(0.95);
           top: 30px;
-          margin: 0px; } }
+          margin: 0 0 50px 0; } }
   .slider .logo img {
     width: 6vw; }
     @media only screen and (max-width: 480px) {
@@ -138,14 +143,14 @@ body {
 
 .quote-1 {
   padding-bottom: 80px;
-  margin-top: -100px; }
+  margin-top: 50px; }
   @media only screen and (max-width: 768px) {
     .quote-1 {
       margin-top: 0px;
       padding-bottom: 50px; } }
   @media only screen and (max-width: 480px) {
     .quote-1 {
-      margin-top: 180px;
+      margin-top: 20px;
       padding-bottom: 50px; } }
   .quote-1 h1 {
     font-weight: 600; }
