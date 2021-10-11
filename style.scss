@@ -317,7 +317,6 @@ body {
       border-radius: 15px;
       padding: 50px;
       margin-right: 25px;
-      user-select: none;
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
       position: relative; //
       transition: all 0.5s ease;
@@ -426,7 +425,7 @@ body {
 
       @include respond-to(ipads) {
         margin-left: 0;
-        height: 300px;
+        height: 280px;
         margin-top: 20px;
       }
 
