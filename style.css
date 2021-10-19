@@ -157,7 +157,7 @@ body {
     .quote-1 {
       margin-top: 20px;
       padding-bottom: 50px; } }
-  .quote-1 h1 {
+  .quote-1 h2 {
     font-weight: 600; }
 
 .highlight {
@@ -169,7 +169,7 @@ body {
     position: relative;
     overflow: hidden;
     align-items: flex-start; }
-    .highlight .slider-container .text-container h1.text-break {
+    .highlight .slider-container .text-container h2.text-break {
       white-space: nowrap; }
     .highlight .slider-container .item {
       display: flex;
@@ -281,14 +281,14 @@ body {
 
 section.introducing {
   padding-top: 120px; }
-  section.introducing h1 {
+  section.introducing h2 {
     font-size: 60px;
     font-weight: 600; }
     @media only screen and (max-width: 768px) {
-      section.introducing h1 {
+      section.introducing h2 {
         padding-bottom: 12px; } }
     @media only screen and (max-width: 480px) {
-      section.introducing h1 {
+      section.introducing h2 {
         text-align: center;
         padding-bottom: 0px; } }
 
@@ -363,7 +363,7 @@ section.about-me {
 .experience {
   background: #e8ece6;
   padding: 60px 0; }
-  .experience h1.display-1 {
+  .experience h2.display-1 {
     font-size: 60px;
     font-weight: 600; }
   .experience .vertical-line {
@@ -493,7 +493,7 @@ section.more {
     section.more .col-md-4 .more-single .description {
       z-index: 30;
       height: inherit; }
-      section.more .col-md-4 .more-single .description h1 {
+      section.more .col-md-4 .more-single .description h2 {
         top: 0;
         right: 15px;
         font-weight: 700;
@@ -515,7 +515,7 @@ section.more {
       transform: scale(1.05); }
     section.more .col-md-4 .more-single.active h4 {
       color: white; }
-    section.more .col-md-4 .more-single.active h1 {
+    section.more .col-md-4 .more-single.active h2 {
       opacity: 0.8; }
 
 section.contact {
@@ -533,12 +533,12 @@ section.contact {
       section.contact .cat-ani {
         margin-top: 0px;
         transform: scale(0.7); } }
-  section.contact h1.display-1 {
+  section.contact h2.display-1 {
     font-size: 60px;
     font-weight: 600;
     text-align: right; }
     @media only screen and (max-width: 768px) {
-      section.contact h1.display-1 {
+      section.contact h2.display-1 {
         font-size: 52px;
         text-align: center; } }
   section.contact p.description {
@@ -555,7 +555,8 @@ section.contact {
     bottom: 10px;
     font-size: 0.8rem; }
   section.contact .social-media-icon {
-    align-self: flex-end; }
+    align-self: flex-end;
+    width: 50%; }
     @media only screen and (max-width: 768px) {
       section.contact .social-media-icon {
         align-self: center;
@@ -565,7 +566,8 @@ section.contact {
       section.contact .social-media-icon {
         align-self: center;
         padding: 5px 0;
-        margin: 0 auto; } }
+        margin: 0 auto;
+        width: 80%; } }
     section.contact .social-media-icon a {
       width: fit-content;
       transition: all 0.3s ease; }

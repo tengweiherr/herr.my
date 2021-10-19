@@ -56,15 +56,13 @@ $(document).ready(function(){
       y: 100  
     }, "-=0.2");
 
-    gsap.from(".quote-1 h1", {
+    gsap.from(".quote-1 h2", {
       scrollTrigger: {trigger: ".quote-1", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
       y: 200
     });
 
     //highlight
     //****************/
-    // var temp = document.querySelector(".horizontal-container").offsetWidth;
-    // let highlightEnd = temp*1.3;
     let highlightTL = gsap.timeline({
       scrollTrigger:{
         trigger: ".highlight", 
@@ -73,7 +71,7 @@ $(document).ready(function(){
     });
     
     highlightTL
-    .from(".highlight .text-container h1",{
+    .from(".highlight .text-container h2",{
       y:50   
     })
     .from(".highlight .seperate-line span hr",{
@@ -82,35 +80,6 @@ $(document).ready(function(){
     },"-=0.5");
 
     highlightTL.duration(1);
-
-
-    //toggleClass for horozontal container in responsive
-// var windowWidth = $(window).width();
-
-// function horizontalContainerToggleClass (windowWidth) { 
-
-//   if( windowWidth < 480 ) {
-//     $('.horizontal-container').addClass('container');
-//   }else{
-//     $('.horizontal-container').removeClass('container');
-//   }
-
-// }
-
-// horizontalContainerToggleClass(windowWidth);
-
-// $( window ).resize(function() {
-//   horizontalContainerToggleClass(windowWidth);
-// });
-
-
-
-
-
-
-
-
-
 
 
   gsap.from(".layer-1 img", {
@@ -126,9 +95,8 @@ $(document).ready(function(){
 
 //about-me
 //******************
-
-gsap.from(".introducing h1.display-1", {
-  scrollTrigger: {trigger: ".introducing h1.display-1", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
+gsap.from(".introducing h2.display-1", {
+  scrollTrigger: {trigger: ".introducing h2.display-1", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
   y: 50
 });
 
@@ -168,8 +136,8 @@ skillsTL
 
 //experience section 
 //*****************
-gsap.from(".experience .text-container h1.display-1", {
-  scrollTrigger: {trigger: ".experience .text-container h1.display-1", start:"top bottom", end:"+=100", scrub:1, toggleActions: "play complete complete complete"},
+gsap.from(".experience .text-container h2.display-1", {
+  scrollTrigger: {trigger: ".experience .text-container h2.display-1", start:"top bottom", end:"+=100", scrub:1, toggleActions: "play complete complete complete"},
   y: 100
 });
 
@@ -215,8 +183,8 @@ expTL
 
 //more section 
 //*****************
-gsap.from(".more .text-container h1", {
-  scrollTrigger: {trigger: ".more .text-container h1", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
+gsap.from(".more .text-container h2", {
+  scrollTrigger: {trigger: ".more .text-container h2", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
   y: 100
 });
 
@@ -242,8 +210,8 @@ $('.more-single').hover(
 
 //contact
 //***************/
-gsap.from(".contact .text-container h1", {
-  scrollTrigger: {trigger: ".contact .text-container h1", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
+gsap.from(".contact .text-container h2", {
+  scrollTrigger: {trigger: ".contact .text-container h2", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
   y: 100
 });
 
@@ -282,11 +250,6 @@ gsap.from(".contact .social-media-icon a", 0.1,{
       scale: 0.7,
       transformOrigin: "45 center"
     });
-
-
-
-
-
 
 
   //svg-ani  
@@ -392,46 +355,6 @@ gsap.from(".contact .social-media-icon a", 0.1,{
     y: -8
   });
 
-
-
-  // let isDown = false;
-  // let startX;
-  // let scrollLeft;
-  // const slider = document.querySelector('.horizontal-container');
-  
-  // const end = () => {
-  //   isDown = false;
-  //   slider.classList.remove('active');
-  // }
-  
-  // const start = (e) => {
-  //   isDown = true;
-  //   slider.classList.add('active');
-  //   startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
-  //   scrollLeft = slider.scrollLeft;	
-  // }
-  
-  // const move = (e) => {
-  //   if(!isDown) return;
-  
-  //   e.preventDefault();
-  //   const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
-  //   const dist = (x - startX);
-  //   slider.scrollLeft = scrollLeft - dist;
-
-  // }
-  
-  // (() => {
-  //   slider.addEventListener('mousedown', start);
-  //   slider.addEventListener('touchstart', start);
-  
-  //   slider.addEventListener('mousemove', move);
-  //   slider.addEventListener('touchmove', move);
-  
-  //   slider.addEventListener('mouseleave', end);
-  //   slider.addEventListener('mouseup', end);
-  //   slider.addEventListener('touchend', end);
-  // })();
   var horizontal_container = document.querySelector(".horizontal-container");
 
 
@@ -440,9 +363,8 @@ gsap.from(".contact .social-media-icon a", 0.1,{
     Draggable.create(".horizontal-container", {
       type:"x",
       bounds:".slider-container",
-      // throwProps:true, 
       onDragStart:function() {
-        $(".horizontal-container").addClass('active');
+        $(".horizontal-container").addClass("active");
         
       },
       onDragEnd:function() {
@@ -489,7 +411,6 @@ gsap.from(".contact .social-media-icon a", 0.1,{
         console.log((33+(fullwidth*fullwidthPer)));
        
       },
-      // cursor: `url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png"), ew-resize`,
        snap:{
           x: function(value) {
               //snap to the closest increment of 50.

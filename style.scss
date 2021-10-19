@@ -291,7 +291,7 @@ body {
     padding-bottom: 50px;
   }
 
-  h1 {
+  h2 {
     font-weight: 600;
   }
 }
@@ -309,7 +309,7 @@ body {
     align-items: flex-start;
     // margin: 0 auto;
 
-    .text-container h1.text-break {
+    .text-container h2.text-break {
       white-space: nowrap;
     }
 
@@ -472,7 +472,7 @@ body {
 section.introducing {
   padding-top: 120px;
 
-  h1 {
+  h2 {
     font-size: 60px;
     font-weight: 600;
     @include respond-to(ipads) {
@@ -589,7 +589,7 @@ section.about-me {
   background: $color-body;
   padding: 60px 0;
 
-  h1.display-1 {
+  h2.display-1 {
     font-size: 60px;
     font-weight: 600;
   }
@@ -791,7 +791,7 @@ section.more {
       z-index: 30;
       height: inherit;
 
-      h1 {
+      h2 {
         top: 0;
         right: 15px;
         font-weight: 700;
@@ -826,7 +826,7 @@ section.more {
       h4 {
         color: white;
       }
-      h1 {
+      h2 {
         opacity: 0.8;
       }
     }
@@ -855,7 +855,7 @@ section.contact {
     }
   }
 
-  h1.display-1 {
+  h2.display-1 {
     font-size: 60px;
     font-weight: 600;
     text-align: right;
