@@ -235,7 +235,6 @@ body {
     }
 
     .ani-container {
-      // max-height: 100vh;
       overflow: visible;
     }
 
@@ -304,10 +303,9 @@ body {
   .slider-container {
     display: flex;
     flex-direction: column;
-    position: relative; //
+    position: relative;
     overflow: hidden;
     align-items: flex-start;
-    // margin: 0 auto;
 
     .text-container h2.text-break {
       white-space: nowrap;
@@ -399,7 +397,6 @@ body {
       }
 
       &:hover {
-        // transform: scale(0.98) !important;
         box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
 
         .highlight-img-div {
@@ -409,12 +406,8 @@ body {
     }
 
     .horizontal-container {
-      // width: 100%;
-      // height: fit-content;
       display: flex;
-      // overflow: hidden;
       position: relative;
-      // cursor: pointer;
 
       @include respond-to(mobile) {
         padding: 0 0.75rem;
@@ -488,11 +481,6 @@ section.introducing {
 section.about-me {
   background-color: $color-body;
   padding: 0 0 80px 0;
-
-  // .seperate-line {
-  //   background: black;
-  //   max-width: 100%;
-  // }
 
   .parallax {
     position: relative;
