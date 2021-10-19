@@ -889,6 +889,7 @@ section.contact {
 
   .social-media-icon {
     align-self: flex-end;
+    width: 50%;
 
     @include respond-to(ipads) {
       align-self: center;
@@ -899,6 +900,7 @@ section.contact {
       align-self: center;
       padding: 5px 0;
       margin: 0 auto;
+      width: 80%;
     }
 
     a {
