@@ -1,0 +1,3 @@
+Sitemap: https://www.herr.my/sitemap.xml
+User-agent: *
+Disallow:
