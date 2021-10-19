@@ -430,7 +430,13 @@ body {
 
       @include respond-to(ipads) {
         margin-left: 0;
-        height: 290px;
+        height: 280px;
+        margin-top: 20px;
+      }
+
+      @include respond-to(mobile) {
+        margin-left: 0;
+        height: 270px;
         margin-top: 20px;
       }
 
@@ -779,7 +785,7 @@ section.more {
       z-index: 30;
       height: inherit;
 
-      h2 {
+      h3 {
         top: 0;
         right: 15px;
         font-weight: 700;
@@ -814,7 +820,7 @@ section.more {
       h4 {
         color: white;
       }
-      h2 {
+      h3 {
         opacity: 0.8;
       }
     }
