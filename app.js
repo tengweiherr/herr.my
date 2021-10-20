@@ -251,6 +251,11 @@ gsap.from(".contact .social-media-icon a", 0.1,{
       transformOrigin: "45 center"
     });
 
+    gsap.fromTo(".sleeping-z", 
+      {y:80, x:70}, 
+      {y:40, x:50, scale:0.9, opacity:0, duration:2, repeat:-1}
+    );
+
 
   //svg-ani  
   gsap.from("#background", {
