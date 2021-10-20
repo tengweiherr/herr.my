@@ -1,3 +1,4 @@
-Sitemap: https://www.herr.my/sitemap.xml
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://www.herr.my/sitemap.xml
