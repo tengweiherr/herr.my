@@ -148,7 +148,7 @@ let expTL = gsap.timeline({
 });
 
 expTL
-  .from(".experience .vertical-line", {height:0}, 0)
+  // .from(".experience .vertical-line", {height:0}, 0)
   .from(".exp", {opacity: 0, stagger:0.3},0)
   .from(".experience .exp-desc", {x: 100, opacity: 0},"-=0.8");
   

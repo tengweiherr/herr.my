@@ -584,4 +584,9 @@ section.contact {
       width: 20px;
       height: 20px; }
 
+section.copyright {
+  background: #dee2dc; }
+  section.copyright p {
+    font-size: 0.8rem; }
+
 /*# sourceMappingURL=style.css.map */
