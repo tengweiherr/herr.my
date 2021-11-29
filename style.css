@@ -419,6 +419,8 @@ section.about-me {
       .experience .exp-desc .exp-desc-inner p {
         width: 100%;
         opacity: 0.85; }
+      .experience .exp-desc .exp-desc-inner ul {
+        margin-left: 1.2rem; }
       .experience .exp-desc .exp-desc-inner h5 {
         color: white; }
       .experience .exp-desc .exp-desc-inner .img-container {
