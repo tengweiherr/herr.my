@@ -428,12 +428,6 @@ gsap.from(".contact .social-media-icon a", 0.1,{
     
   }());
 
-
-  
-  
-
-
-
 });
 
 
