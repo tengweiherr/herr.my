@@ -175,6 +175,9 @@ expTL
         if ($(".exp-4").hasClass("active")) {
             $( ".exp-desc-inner-4" ).addClass("active");
         } 
+        if ($(".exp-5").hasClass("active")) {
+          $( ".exp-desc-inner-5" ).addClass("active");
+      } 
         
     }
 
