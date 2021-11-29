@@ -18,7 +18,6 @@ $(document).ready(function(){
     });   
 
     //navbar
-    //****************/
     let navTL = gsap.timeline({
       scrollTrigger:{
         trigger: "nav", 
@@ -39,7 +38,6 @@ $(document).ready(function(){
 
 
     //slider
-    //****************/
     let sliderTL = gsap.timeline({
       scrollTrigger:{
         trigger: ".slider", 
@@ -61,7 +59,6 @@ $(document).ready(function(){
     });
 
     //highlight
-    //****************/
     let highlightTL = gsap.timeline({
       scrollTrigger:{
         trigger: ".highlight", 
@@ -93,7 +90,6 @@ $(document).ready(function(){
 
 
 //about-me
-//******************
 gsap.from(".introducing h2.display-1", {
   scrollTrigger: {trigger: ".introducing h2.display-1", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
   y: 50
@@ -134,7 +130,6 @@ skillsTL
 
 
 //experience section 
-//*****************
 gsap.from(".experience .text-container h2.display-1", {
   scrollTrigger: {trigger: ".experience .text-container h2.display-1", start:"top bottom", end:"+=100", scrub:1, toggleActions: "play complete complete complete"},
   y: 100
@@ -184,7 +179,6 @@ expTL
 
 
 //more section 
-//*****************
 gsap.from(".more .text-container h2", {
   scrollTrigger: {trigger: ".more .text-container h2", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
   y: 100
@@ -211,7 +205,6 @@ $('.more-single').hover(
 
 
 //contact
-//***************/
 gsap.from(".contact .text-container h2", {
   scrollTrigger: {trigger: ".contact .text-container h2", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
   y: 100
