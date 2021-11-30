@@ -430,13 +430,13 @@ body {
 
       @include respond-to(ipads) {
         margin-left: 0;
-        height: 280px;
+        height: fit-content;
         margin-top: 20px;
       }
 
       @include respond-to(mobile) {
         margin-left: 0;
-        height: 270px;
+        height: fit-content;
         margin-top: 20px;
       }
 

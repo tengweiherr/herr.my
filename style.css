@@ -258,12 +258,12 @@ body {
       @media only screen and (max-width: 768px) {
         .highlight .slider-container .item .item-inner {
           margin-left: 0;
-          height: 280px;
+          height: fit-content;
           margin-top: 20px; } }
       @media only screen and (max-width: 480px) {
         .highlight .slider-container .item .item-inner {
           margin-left: 0;
-          height: 270px;
+          height: fit-content;
           margin-top: 20px; } }
       .highlight .slider-container .item .item-inner h3 {
         flex-basis: 30%; }
