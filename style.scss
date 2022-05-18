@@ -95,6 +95,10 @@ body {
   color: darkcyan;
 }
 
+.orange {
+  color: #e3852d;
+}
+
 .font-1 {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -458,6 +462,13 @@ body {
         flex-basis: 40%;
         text-align: justify;
         font-size: 0.9rem;
+
+        &.sotm{
+          font-weight: 500;
+          color: #e3852d;
+          font-style: italic;
+        }
+
         @include respond-to(ipads) {
           text-align: left;
           flex-basis: 45%;
