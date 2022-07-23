@@ -60,6 +60,7 @@ $mobile-landscape: 640px;
 
 //Primary and theme colour
 $color-primary: #0c6b66;
+$color-secondary: #e3852d;
 $color-body: #e8ece6;
 
 $enable-negative-margins: true;
@@ -96,7 +97,11 @@ body {
 }
 
 .orange {
-  color: #e3852d;
+  color: #e47712;
+}
+
+.orange-light {
+  color: #ff9b3d;
 }
 
 .font-1 {
@@ -238,6 +243,15 @@ body {
       font-size: 0.9rem;
     }
 
+    .intro{
+      h1{
+        font-size:3.5rem;
+      }
+      h6{
+        font-size: 1.8rem;
+      }
+    }
+
     .ani-container {
       overflow: visible;
     }
@@ -281,7 +295,7 @@ body {
 }
 
 .quote-1 {
-  padding-bottom: 80px;
+  padding-bottom: 70px;
   margin-top: 50px;
 
   @include respond-to(ipads) {
@@ -296,6 +310,7 @@ body {
 
   h2 {
     font-weight: 600;
+    font-size: 2.5rem;
   }
 }
 
@@ -328,8 +343,27 @@ body {
       padding: 50px;
       margin-right: 25px;
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-      position: relative; //
+      position: relative; 
+      overflow: hidden;
       transition: all 0.5s ease;
+
+      .award-winning{
+        width: 250px;
+        height: 50px;
+        background: $color-secondary;
+        transform: rotate(45deg);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+
+        h6{
+          margin-bottom:0;
+          font-weight:700;
+          font-size: 1.2rem;
+        }
+      }
 
       &#item-3 {
         margin-right: 0px !important;
