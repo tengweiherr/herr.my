@@ -4,13 +4,18 @@
 $small-desktop: 960px;
 $large-desktop: 1200px;
 $ipad: 768px;
-$ipadpro: 1100px;
+$ipadpro: 1366px;
 $mobile: 480px;
 $mobile-landscape: 640px;
 
 @mixin respond-to($media) {
   @if $media == largeDesktop {
     @media only screen and (min-width: $large-desktop) {
+      @content;
+    }
+  }
+  @if $media == belowLargeDesktop {
+    @media only screen and (max-width: $large-desktop) {
       @content;
     }
   }
@@ -100,8 +105,8 @@ body {
   color: #e47712;
 }
 
-.orange-light {
-  color: #ff9b3d;
+.aqua {
+  color: aquamarine;
 }
 
 .font-1 {
@@ -136,10 +141,11 @@ body {
 .button.cyan {
   border-color: black;
   color: black;
+  transition: all 0.3s ease;
 
   &:hover {
     color: white !important;
-    background: $color-primary;
+    background: -webkit-linear-gradient(45deg, #659999 30%, #f4791f 100%);
   }
 }
 
@@ -216,7 +222,6 @@ body {
 
     .resume:hover {
       color: white !important;
-      background: $color-primary !important;
     }
   }
 
@@ -244,11 +249,21 @@ body {
     }
 
     .intro{
+      margin-top: 1.5rem;
       h1{
-        font-size:3.5rem;
-      }
-      h6{
-        font-size: 1.8rem;
+        font-size:4rem;
+        font-weight: 600;
+        background: -webkit-linear-gradient(45deg, #659999 40%, #f4791f 70%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @include respond-to(belowLargeDesktop) {
+          font-size:3rem;
+          }
+
+       @include respond-to(mobile) {
+        font-size:2rem;
+        }
       }
     }
 
@@ -261,6 +276,10 @@ body {
       transform: scale(0.5);
       top: -250px;
       margin: 2.5rem 0 -32.5rem 0;
+
+      @include respond-to(belowLargeDesktop) {
+        top: -220px;
+      }
 
       @include respond-to(ipadpro) {
         transform: scale(0.6);
@@ -295,8 +314,12 @@ body {
 }
 
 .quote-1 {
-  padding-bottom: 70px;
-  margin-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 30px;
+
+  @include respond-to(belowLargeDesktop) {
+    padding-top:30px;
+  }
 
   @include respond-to(ipads) {
     margin-top: 0px;
@@ -305,19 +328,29 @@ body {
 
   @include respond-to(mobile) {
     margin-top: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
   }
 
   h2 {
     font-weight: 600;
     font-size: 2.5rem;
+    @include respond-to(mobile) {
+      font-size: 1.5rem;
+    }
+  }
+
+  p{
+    font-size: 1.2rem;
+    @include respond-to(mobile) {
+      font-size:1rem;
+    }
   }
 }
 
 //highlight----------------------------------
 .highlight {
   padding: 40px 0 60px 0;
-  background: $color-primary;
+  background: -webkit-linear-gradient(0deg, #659999, #f4791f);
 
   .slider-container {
     display: flex;
@@ -695,13 +728,13 @@ section.about-me {
 
     .exp-desc-inner {
       width: 100%;
-      background: $color-primary;
+      background: -webkit-linear-gradient(0deg, #659999 0%, #f4791f 150%);
       overflow: hidden;
       position: absolute;
       opacity: 0;
       border-radius: 12px;
       padding: 2.5rem;
-
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
       p {
         width: 100%;
         opacity: 0.85;
@@ -712,6 +745,8 @@ section.about-me {
 
       h5 {
         color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
       }
 
       .img-container {
@@ -899,6 +934,9 @@ section.contact {
     font-size: 60px;
     font-weight: 600;
     text-align: right;
+    background: -webkit-linear-gradient(45deg, #659999 60%, #f4791f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     @include respond-to(ipads) {
       font-size: 52px;
@@ -963,5 +1001,10 @@ section.copyright {
   background: #dee2dc;
   p {
     font-size: 0.8rem;
+  }
+  .name{
+    background: -webkit-linear-gradient(45deg, #659999 30%, #f4791f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

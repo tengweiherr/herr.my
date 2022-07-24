@@ -48,15 +48,27 @@ $(document).ready(function(){
     sliderTL
     .from(".slider h1.name", {
       y: 200 
-    })
-    .from(".slider .intro p", {
-      y: 100  
-    }, "-=0.2");
-
-    gsap.from(".quote-1 h2", {
-      scrollTrigger: {trigger: ".quote-1", start:"top bottom", end:"+=200", scrub:1, toggleActions: "play complete complete complete"},
-      y: 200
     });
+
+    //quote-1
+    let quote1TL = gsap.timeline({
+      scrollTrigger:{
+        trigger: ".quote-1", 
+        start:"top bottom", 
+        end:"+=200", 
+        scrub:1, 
+        toggleActions: "play complete complete complete"      
+      }
+    }); 
+
+    quote1TL
+    .from(".quote-1 h2", {
+      y: 50 
+    })
+    .from(".quote-1 p", {
+      y: 50 
+    })
+    ;
 
     //highlight
     let highlightTL = gsap.timeline({
