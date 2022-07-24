@@ -267,7 +267,7 @@ body {
     -webkit-transform: scale(0.95);
             transform: scale(0.95);
     top: 30px;
-    margin: 0 0 50px 0;
+    margin: 0 0 20px 0;
   }
 }
 
@@ -302,7 +302,7 @@ body {
 
 @media only screen and (max-width: 480px) {
   .quote-1 {
-    margin-top: 20px;
+    margin-top: 0px;
     padding-bottom: 40px;
   }
 }

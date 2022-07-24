@@ -296,7 +296,7 @@ body {
       @include respond-to(mobile) {
         transform: scale(0.95);
         top: 30px;
-        margin: 0 0 50px 0;
+        margin: 0 0 20px 0;
       }
     }
   }
@@ -327,7 +327,7 @@ body {
   }
 
   @include respond-to(mobile) {
-    margin-top: 20px;
+    margin-top: 0px;
     padding-bottom: 40px;
   }
 
