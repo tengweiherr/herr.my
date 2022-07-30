@@ -608,6 +608,11 @@ body {
   }
 }
 
+.highlight .slider-container .item .item-inner .read-more {
+  font-size: 0.8rem;
+  padding: 6px 18px !important;
+}
+
 section.introducing {
   padding-top: 120px;
 }

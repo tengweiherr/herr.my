@@ -3,12 +3,6 @@ gsap.registerPlugin(Draggable);
 
 $(document).ready(function () {
 
-  $(window).scroll(function () {
-    var windowHeight = jQuery(window).height();
-    var changeColor = windowHeight - 100;
-    // $("nav").toggleClass('fixed-top scrolled py-2', $(window).scrollTop() > changeColor);
-  });
-
   $(".navbar-toggler").click(function () {
     if ($(this).hasClass('collapsed')) {
       $("nav").removeClass('mobile-nav-expand');
