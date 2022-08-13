@@ -100,7 +100,7 @@ body {
 }
 
 .seperate-line span hr {
-  width: 33%;
+  width: 25%;
   height: 4px !important;
   color: #e8ece6;
   opacity: 1;
@@ -409,7 +409,7 @@ body {
   font-size: 1.2rem;
 }
 
-.highlight .slider-container .item#item-3 {
+.highlight .slider-container .item#item-4 {
   margin-right: 0px !important;
 }
 

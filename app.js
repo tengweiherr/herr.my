@@ -385,24 +385,24 @@ $(document).ready(function () {
           return Math.abs(transform[0]);
         }
         var fullwidth = getMatrix(horizontal_container); //1167 in desktop
-        var fullwidthPer = 0.06;
+        var fullwidthPer = 0.039;
 
         //changeFactor for seperate line width in responsive
         var windowWidth = $(window).width();
 
         function changeFactor(windowWidth) {
 
-          if (windowWidth > 400 && windowWidth < 599) {
+          if (windowWidth > 200 && windowWidth < 599) {
             fullwidthPer = 0.08;
           }
           if (windowWidth > 600 && windowWidth < 800) {
             fullwidthPer = 0.24;
           }
           if (windowWidth > 801 && windowWidth < 1200) {
-            fullwidthPer = 0.043;
+            fullwidthPer = 0.033;
           }
           if (windowWidth > 1201 && windowWidth < 1400) {
-            fullwidthPer = 0.049;
+            fullwidthPer = 0.038;
           }
         }
 
@@ -413,9 +413,9 @@ $(document).ready(function () {
         });
 
 
-        $(".highlight .seperate-line span hr").width((33 + (fullwidth * fullwidthPer)) + '%');
+        $(".highlight .seperate-line span hr").width((25 + (fullwidth * fullwidthPer)) + '%');
 
-        console.log((33 + (fullwidth * fullwidthPer)));
+        // console.log((25 + (fullwidth * fullwidthPer)));
 
       },
       snap: {
@@ -428,8 +428,10 @@ $(document).ready(function () {
 
   }());
 
-});
+  // this is the helper function that sets it all up. Pass in the content <div> and then the wrapping viewport <div> (can be the elements or selector text). It also sets the default "scroller" to the content so you don't have to do that on all your ScrollTriggers.
 
+
+});
 
 
 
